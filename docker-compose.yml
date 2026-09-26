@@ -1,0 +1,31 @@
+# Local development only. Production uses Render (backend+DB) and Vercel (frontend).
+version: "3.9"
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: jwb_user
+      POSTGRES_PASSWORD: jwb_pass
+      POSTGRES_DB: jwb_nexus
+    ports:
+      - "5432:5432"
+    volumes:
+      - jwb_pg_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://jwb_user:jwb_pass@db:5432/jwb_nexus
+      JWT_SECRET: dev-secret-change-me
+      CORS_ORIGINS: http://localhost:5173
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+volumes:
+  jwb_pg_data:
