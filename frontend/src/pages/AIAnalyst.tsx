@@ -55,7 +55,7 @@ export default function AIAnalyst() {
       <div className="flex-1 overflow-y-auto space-y-3 mb-4">
         {messages.map((m, i) => (
           <div key={i} className={`max-w-[85%] rounded-xl p-3 text-sm whitespace-pre-line ${
-            m.role === 'user' ? 'bg-brand-600 text-white ml-auto' : 'bg-white border'
+            m.role === 'user' ? 'bg-brand-500 text-black ml-auto' : 'bg-white border'
           }`}>
             {m.text}
           </div>
@@ -69,7 +69,7 @@ export default function AIAnalyst() {
         <input value={input} onChange={(e) => setInput(e.target.value)}
           placeholder="Ask about your business…"
           className="flex-1 border rounded-lg px-3 py-2 text-sm" />
-        <button disabled={loading} className="bg-brand-600 text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-brand-700 disabled:opacity-50">
+        <button disabled={loading} className="bg-brand-500 text-black rounded-lg px-4 py-2 text-sm font-semibold hover:bg-brand-600 disabled:opacity-50">
           Ask
         </button>
       </form>
