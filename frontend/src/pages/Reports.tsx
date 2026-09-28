@@ -53,7 +53,7 @@ export default function Reports() {
           <input type="date" value={end} onChange={(e) => setEnd(e.target.value)} className="border rounded-lg px-3 py-2 text-sm" /></div>
         <div><label className="block text-xs text-gray-500 mb-1">Opening cash balance</label>
           <input type="number" value={opening} onChange={(e) => setOpening(e.target.value)} className="border rounded-lg px-3 py-2 text-sm w-32" /></div>
-        <button onClick={runReports} className="bg-brand-600 text-white rounded-lg px-4 py-2 text-sm font-medium hover:bg-brand-700">Run</button>
+        <button onClick={runReports} className="bg-brand-500 text-black rounded-lg px-4 py-2 text-sm font-semibold hover:bg-brand-600">Run</button>
       </div>
 
       {error && <div className="text-sm text-red-600 bg-red-50 rounded p-3 mb-4">{error}</div>}
