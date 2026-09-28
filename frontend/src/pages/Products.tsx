@@ -49,7 +49,7 @@ export default function Products() {
     <div className="p-8 max-w-5xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">Products</h1>
-        <button onClick={() => setShowForm(!showForm)} className="px-4 py-2 bg-brand-600 text-white rounded-lg text-sm font-medium hover:bg-brand-700">
+        <button onClick={() => setShowForm(!showForm)} className="px-4 py-2 bg-brand-500 text-black rounded-lg text-sm font-semibold hover:bg-brand-600">
           {showForm ? 'Cancel' : '+ Add Product'}
         </button>
       </div>
@@ -64,7 +64,7 @@ export default function Products() {
           <input type="number" placeholder="Starting quantity" value={form.quantity} onChange={(e) => setForm({ ...form, quantity: e.target.value })} className="border rounded-lg px-3 py-2 text-sm" />
           <input type="number" placeholder="Minimum stock" value={form.minimum_stock} onChange={(e) => setForm({ ...form, minimum_stock: e.target.value })} className="border rounded-lg px-3 py-2 text-sm" />
           <input type="date" placeholder="Expiry date" value={form.expiry_date} onChange={(e) => setForm({ ...form, expiry_date: e.target.value })} className="border rounded-lg px-3 py-2 text-sm col-span-2" />
-          <button className="col-span-2 bg-brand-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-brand-700">Save product</button>
+          <button className="col-span-2 bg-brand-500 text-black rounded-lg py-2 text-sm font-semibold hover:bg-brand-600">Save product</button>
         </form>
       )}
 
