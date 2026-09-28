@@ -46,7 +46,7 @@ export default function Expenses() {
         </select>
         <input placeholder="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} className="border rounded-lg px-3 py-2 text-sm" />
         <input required type="number" step="0.01" placeholder="Amount" value={form.amount} onChange={(e) => setForm({ ...form, amount: e.target.value })} className="border rounded-lg px-3 py-2 text-sm" />
-        <button className="bg-brand-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-brand-700">Add expense</button>
+        <button className="bg-brand-500 text-black rounded-lg py-2 text-sm font-semibold hover:bg-brand-600">Add expense</button>
       </form>
 
       <div className="bg-white rounded-xl shadow-sm border overflow-hidden">
