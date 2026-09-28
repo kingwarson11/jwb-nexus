@@ -62,7 +62,7 @@ export default function POS() {
             <button key={p.id} onClick={() => addToCart(p)} disabled={p.quantity <= 0}
               className="bg-white border rounded-xl p-4 text-left hover:border-brand-500 disabled:opacity-40 disabled:cursor-not-allowed">
               <div className="font-medium text-sm">{p.name}</div>
-              <div className="text-brand-600 font-semibold mt-1">{business.currency} {p.selling_price}</div>
+              <div className="text-ink-900 font-bold mt-1">{business.currency} {p.selling_price}</div>
               <div className="text-xs text-gray-400 mt-1">{p.quantity} in stock</div>
             </button>
           ))}
@@ -96,7 +96,7 @@ export default function POS() {
               <option value="BANK">Bank</option>
               <option value="CARD">Card</option>
             </select>
-            <button onClick={checkout} className="w-full mt-3 bg-brand-600 text-white rounded-lg py-2 font-medium hover:bg-brand-700">
+            <button onClick={checkout} className="w-full mt-3 bg-brand-500 text-black rounded-lg py-2 font-semibold hover:bg-brand-600">
               Complete Sale
             </button>
           </>
