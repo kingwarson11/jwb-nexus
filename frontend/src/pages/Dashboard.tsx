@@ -61,8 +61,8 @@ export default function Dashboard() {
         <h2 className="font-semibold mb-3">AI Insights</h2>
         <ul className="space-y-2">
           {insights.map((line, i) => (
-            <li key={i} className="text-sm text-gray-700 flex gap-2">
-              <span className="text-brand-600">•</span> {line}
+            <li key={i} className="text-sm text-gray-700 flex gap-2 items-start">
+              <span className="mt-1.5 w-2 h-2 rounded-full bg-brand-500 flex-shrink-0" /> {line}
             </li>
           ))}
           {!summary && <li className="text-sm text-gray-400">Loading…</li>}
