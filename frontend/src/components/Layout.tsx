@@ -24,7 +24,7 @@ export default function Layout() {
           <p className="text-gray-600">You don't have a business set up yet.</p>
           <button
             onClick={() => navigate('/create-business')}
-            className="px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700"
+            className="px-4 py-2 bg-brand-500 text-black font-semibold rounded-lg hover:bg-brand-600"
           >
             Create your business
           </button>
@@ -35,10 +35,12 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex">
-      <aside className="w-56 bg-brand-900 text-white flex flex-col">
-        <div className="px-5 py-5 border-b border-brand-700">
-          <div className="font-bold text-lg tracking-tight">JWB NEXUS</div>
-          <div className="text-xs text-brand-100 mt-1 truncate">{business?.name}</div>
+      <aside className="w-56 bg-ink-900 text-white flex flex-col">
+        <div className="px-5 py-5 border-b border-ink-700">
+          <div className="font-bold text-lg tracking-tight">
+            JWB <span className="text-brand-500">NEXUS</span>
+          </div>
+          <div className="text-xs text-gray-400 mt-1 truncate">{business?.name}</div>
         </div>
         <nav className="flex-1 px-3 py-4 space-y-1">
           {links.map((l) => (
@@ -48,7 +50,7 @@ export default function Layout() {
               end={l.to === '/'}
               className={({ isActive }) =>
                 `block px-3 py-2 rounded-lg text-sm font-medium ${
-                  isActive ? 'bg-brand-700 text-white' : 'text-brand-100 hover:bg-brand-800'
+                  isActive ? 'bg-brand-500 text-black' : 'text-gray-300 hover:bg-ink-700'
                 }`
               }
             >
@@ -56,10 +58,10 @@ export default function Layout() {
             </NavLink>
           ))}
         </nav>
-        <div className="p-3 border-t border-brand-700 space-y-2">
+        <div className="p-3 border-t border-ink-700 space-y-2">
           {businesses.length > 1 && (
             <select
-              className="w-full text-xs rounded bg-brand-800 text-white px-2 py-1"
+              className="w-full text-xs rounded bg-ink-700 text-white px-2 py-1 border border-ink-600"
               value={business?.id}
               onChange={(e) => {
                 const b = businesses.find((x) => x.id === e.target.value)
@@ -73,7 +75,7 @@ export default function Layout() {
           )}
           <button
             onClick={() => { logout(); navigate('/login') }}
-            className="w-full text-xs text-brand-100 hover:text-white text-left"
+            className="w-full text-xs text-gray-400 hover:text-brand-500 text-left"
           >
             Log out
           </button>
