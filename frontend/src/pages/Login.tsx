@@ -30,7 +30,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <form onSubmit={handleSubmit} className="w-full max-w-sm bg-white p-8 rounded-xl shadow space-y-4">
         <div className="text-center mb-2">
-          <h1 className="text-2xl font-bold text-brand-700">JWB NEXUS</h1>
+          <h1 className="text-2xl font-bold text-ink-900">JWB <span className="text-brand-600">NEXUS</span></h1>
           <p className="text-sm text-gray-500">Log in to your account</p>
         </div>
         {error && <div className="text-sm text-red-600 bg-red-50 rounded p-2">{error}</div>}
@@ -46,12 +46,12 @@ export default function Login() {
         />
         <button
           disabled={loading}
-          className="w-full bg-brand-600 text-white rounded-lg py-2 font-medium hover:bg-brand-700 disabled:opacity-50"
+          className="w-full bg-brand-500 text-black rounded-lg py-2 font-semibold hover:bg-brand-600 disabled:opacity-50"
         >
           {loading ? 'Logging in…' : 'Log in'}
         </button>
         <p className="text-sm text-center text-gray-500">
-          No account? <Link to="/signup" className="text-brand-600 font-medium">Sign up</Link>
+          No account? <Link to="/signup" className="text-ink-900 font-semibold underline hover:text-brand-600">Sign up</Link>
         </p>
       </form>
     </div>
